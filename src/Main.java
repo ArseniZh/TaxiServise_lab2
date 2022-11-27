@@ -1,6 +1,7 @@
 import cars.Car;
 import cars.CargoCar;
 import cars.PassengerCar;
+import util.CompareFuelConsumption;
 
 import java.util.ArrayList;
 import java.util.Collections;
