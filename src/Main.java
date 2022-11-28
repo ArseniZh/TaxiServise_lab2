@@ -1,6 +1,7 @@
 import car.Car;
 import car.CargoCar;
 import car.PassengerCar;
+import car.SportCar;
 import util.CompareFuelConsumption;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class Main {
         taxiService.add(new CargoCar("УАЗ 2206", 120, 1900, 9000, 2.4, 1110));
         taxiService.add(new PassengerCar("Audi A5", 210, 2300, 90000, 2.3, 2));
         taxiService.add(new PassengerCar("BMW M8 competition", 263, 1900, 155000, 2.5,2));
+        taxiService.add(new SportCar("Koenigsegg Jesko Absolut", 472, 1320, 3800000, 4.0, 2.8));
 
         System.out.println(taxiService.get(0).toString() + "\n");
 
