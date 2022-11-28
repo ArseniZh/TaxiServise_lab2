@@ -1,7 +1,7 @@
 package util;
 
 import java.util.Comparator;
-import cars.*;
+import car.Car;
 
 public class CompareFuelConsumption implements Comparator<Car> {
     public int compare(Car o1, Car o2) {

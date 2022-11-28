@@ -1,4 +1,4 @@
-package cars;
+package car;
 
 public abstract class Car {
     private String model = null;

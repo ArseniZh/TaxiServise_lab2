@@ -1,4 +1,4 @@
-package cars;
+package car;
 
 public class CargoCar extends Car{
     private double transportedWeight;
