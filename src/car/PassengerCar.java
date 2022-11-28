@@ -14,5 +14,15 @@ public class PassengerCar extends Car{
         return this.seatingPlace;
     }
 
-
+    public String toString() {
+        return super.toString() + "\nseating places: " + this.seatingPlace;
+    }
+    public boolean equals(Object obj) {
+        if (super.equals(obj)) {
+            if(!(obj instanceof PassengerCar)) return false;
+            return seatingPlace == ((PassengerCar)obj).seatingPlace;
+        } else {
+            return false;
+        }
+    }
 }
