@@ -2,10 +2,10 @@ import car.Car;
 import car.CargoCar;
 import car.PassengerCar;
 import car.SportCar;
+import service.TaxiService;
 import util.CompareFuelConsumption;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class Main {
@@ -21,27 +21,20 @@ public class Main {
         taxiService.add(new SportCar("BMW M8 competition", 263, 1900, 155000, 2.5,2));
         taxiService.add(new SportCar("Koenigsegg Jesko Absolut", 472, 1320, 3800000, 4.0, 2.8));
 
-        System.out.println(taxiService.get(0).toString() + "\n");
+        TaxiService service = new TaxiService();
 
-        for (Car car : taxiService) {
-            totalCost += car.getCost();
-        }
-        System.out.println("total cost: " + totalCost + "$" + "\n");
+        System.out.println("total cost: " + service.calculateTotalCost(taxiService) + "$" + "\n");
 
         Comparator fuelConsumptionComparator = new CompareFuelConsumption();
-        Collections.sort(taxiService, fuelConsumptionComparator);// from min to max
+        service.sortByFuelConsumption(taxiService, fuelConsumptionComparator);
+        service.outputCars(taxiService);
+        System.out.println("\n");
 
         System.out.print("cars from min fuel consumption to max: ");
-        for (Car car : taxiService) {
-            System.out.print(car.getModel() + ",  ");
-        }
+        service.outputCars(taxiService);
         System.out.println("\n");
 
         System.out.print("cars from the range of cost: ");
-        for (Car car : taxiService) {
-            if ( (car.getMaxSpeed() > 200) && (car.getMaxSpeed() < 215) ) {
-                System.out.println(car.getModel());
-            }
-        }
+        service.findCarInRange(taxiService, 200, 215);
     }
 }
